@@ -33,8 +33,8 @@ namespace NuGet.Packaging
                     { nameof(PackageSaveMode), packageSaveMode }
                 })
         {
-            AddPiiData(nameof(PackageId), packageId.Id.ToString());
-            AddPiiData(nameof(PackageVersion), packageId.Version.ToNormalizedString());
+            AddPiiData(nameof(PackageId), packageId.Id.ToLowerInvariant());
+            AddPiiData(nameof(PackageVersion), packageId.Version.ToNormalizedString().ToLowerInvariant());
         }
     }
 }
